@@ -85,7 +85,7 @@ def validate(stage, rows):
             elif isinstance(item, (int, float)):
                 check(math.isfinite(item), f"{name}: nonfinite number")
         if row["Options"] != "Not required":
-            options = [s.strip() for s in row["Options"].split(";")]
+            options = [s.strip() for s in row["Options"].split("|")]
             if kind == "bool":
                 check(str(value).lower() in options, f"{name}: invalid boolean option")
             else:

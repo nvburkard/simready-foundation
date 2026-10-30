@@ -147,7 +147,7 @@ def build():
         attr.SetCustomDataByKey('siUnit', row['SI Unit'])
         attr.SetCustomDataByKey('synthetic', True)
         if row['Options'] != 'Not required' and row['Type'] != 'bool':
-            attr.SetMetadata('allowedTokens', Vt.TokenArray(row['Options'].split('; ')))
+            attr.SetMetadata('allowedTokens', Vt.TokenArray([option.strip() for option in row['Options'].split('|')]))
     prim.GetAttribute('aif:spec:evaporatorLiquidMassFraction').SetCustomDataByKey('convention', 'Pure WATER uses mass fraction 1.0 in this example.')
     prim.GetAttribute('aif:spec:operatingWeight').SetCustomDataByKey('boundary', 'Synthetic filled operating mass: dry assembly 2000 kg plus 400 kg liquid.')
     prim.GetAttribute('aif:spec:shippingWeight').SetCustomDataByKey('boundary', 'Synthetic drained shipping mass: dry assembly 2000 kg plus 100 kg packaging.')
