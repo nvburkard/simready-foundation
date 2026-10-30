@@ -1,7 +1,12 @@
 # AC_Chiller equipment class standardization
 
 [AC_Chiller.csv](AC_Chiller.csv) defines the air-cooled chiller attribute matrix
-for standardization in this PR: 66 attributes and 18 columns, including Options.
+for standardization in this PR: 66 attributes and seven reader-facing columns.
+The main CSV puts each attribute and description first, followed by Type, SI Unit,
+Options, Requirement, and Applicability.
+[AC_Chiller_traceability.csv](AC_Chiller_traceability.csv) stores the source
+parameter names, aliases, baseline comparisons, and review history, joined by USD
+attribute. Both files use UTF-8, consistent headers, and one attribute per row.
 It is derived from the [AC_Chiller source tab](https://docs.google.com/spreadsheets/d/1_rMBhj-pIEjy6y62ypBr-7KiXfoBq9g4oY5Ult30B8k/edit#gid=1035323646),
 retrieved on 2026-10-30, with the normalization rules below.
 Source row IDs, aliases, decision IDs, and baseline comparisons retain traceability.
@@ -9,7 +14,7 @@ Source row IDs, aliases, decision IDs, and baseline comparisons retain traceabil
 ## Column conventions
 
 - Description explains the quantity or purpose; units and enumerated choices have
-  their own SI Unit Values and Options columns.
+  their own SI Unit and Options columns.
 - Options contains semicolon-separated choices, or `Not required` when no closed
   enumeration is imposed. Array choices apply to each element.
 - Refrigerant designations remain open strings beginning with `R-`.
