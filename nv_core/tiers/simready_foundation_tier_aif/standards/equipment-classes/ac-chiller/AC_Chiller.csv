@@ -1,0 +1,67 @@
+USD Attribute,Default Value,Description,Type,SI Unit,Options,Requirement,Applicability
+aif:spec:nominalVoltage,,Unit nominal voltage,float,V,Not required,Required,All models
+aif:spec:nominalFrequency,,Unit nominal frequency,float,Hz,Not required,Required,All models
+aif:spec:compressorType,,RS0001 compressor type,string,Not applicable,RECIPROCATING | SCREW | CENTRIFUGAL | ROTARY | SCROLL,Required,All models
+aif:spec:refrigerant,,RS0001 refrigerant designation beginning with R-,string,Not applicable,Not required,Required,All models
+aif:spec:hotGasBypassInstalled,,Whether a hot-gas bypass valve is installed,bool,Not applicable,true | false,Conditional,All models
+aif:spec:condenserType,,RS0001 condenser type,string,Not applicable,AIR,Required,All models
+aif:spec:evaporatorLiquidType,,Evaporator liquid type,token,Not applicable,WATER | PROPYLENE_GLYCOL | ETHYLENE_GLYCOL,Required,All models
+aif:spec:evaporatorLiquidMassFraction,,Evaporator liquid mass fraction with bounds >= 0.0 and <= 1.0,float,1,Not required,Required,All models
+aif:spec:evaporatorFoulingFactor,,RS0001 evaporator fouling factor with bounds >= 0.0,float,(m²·K)/W,Not required,Conditional,All models
+aif:spec:compressorSpeedControlType,,RS0001 compressor speed control type,token,Not applicable,CONTINUOUS | DISCRETE,Required,All models
+aif:spec:cyclingDegradationCoefficient,,RS0001 cycling degradation coefficient with bounds >= 0.0 and <= 1.0,float,1,Not required,Conditional,All models
+aif:spec:referenceEvaporatorLiquidVolumetricFlowRate,,Reference evaporator liquid volumetric flow rate,float,m³/s,Not required,Required,All models
+aif:spec:referenceElevation,,Elevation,float,m,Not required,Required,All models
+aif:spec:referenceEvaporatorLiquidLeavingTemperature,,Reference evaporator liquid leaving temperature,float,K,Not required,Required,All models
+aif:spec:referenceCondenserAirEnteringDrybulbTemperature,,Reference condenser air entering drybulb temperature,float,K,Not required,Required,All models
+aif:spec:referenceCondenserAirEnteringRelativeHumidity,,Reference condenser air entering relative humidity with bounds >= 0.0 and <= 1.0,float,1,Not required,Required,All models
+aif:spec:referenceAmbientPressure,,Reference ambient pressure,float,Pa,Not required,Required,All models
+aif:spec:referenceCompressorSequenceNumber,,Reference compressor sequence number,int,1,Not required,Conditional,All models
+aif:spec:referenceInputPower,,Reference input power,float,W,Not required,Required,All models
+aif:spec:referenceNetEvaporatorCapacity,,Reference net evaporator capacity,float,W,Not required,Required,All models
+aif:spec:referenceNetCondenserCapacity,,Reference net condenser capacity,float,W,Not required,Required,All models
+aif:spec:referenceCondenserAirVolumetricFlowRate,,Reference condenser air volumetric flow rate,float,m³/s,Not required,Required,All models
+aif:spec:referenceOilCoolerHeat,,Reference oil cooler heat,float,W,Not required,Conditional,All models
+aif:spec:referenceAuxiliaryHeat,,Reference auxiliary heat,float,W,Not required,Conditional,All models
+aif:spec:referenceOperationState,,Reference operation state,string,Not applicable,NORMAL | STANDBY,Conditional,All models
+aif:spec:performanceModelType,,Performance model type,token,Not applicable,TABULAR | CURVE-FIT,Required,All models
+aif:spec:performanceModelSource,,Performance modeling program the component model comes from (for example EnergyPlus),string,Not applicable,Not required,Required,All models
+aif:spec:performanceModelVersion,,Performance modeling program version,string,Not applicable,Not required,Required,All models
+aif:spec:performanceModelComponent,,Performance model component name that the performance curves apply to,string,Not applicable,Not required,Required,All models
+aif:spec:performanceMapCoolingGridEvaporatorLiquidVolumetricFlowRate,,RS0001 AIR cooling grid variable evaporator liquid volumetric flow rate,float_array,m³/s,Not required,Conditional,TABULAR only
+aif:spec:performanceMapCoolingGridEvaporatorLiquidLeavingTemperature,,RS0001 AIR cooling grid variable evaporator liquid leaving temperature,float_array,K,Not required,Conditional,TABULAR only
+aif:spec:performanceMapCoolingGridCondenserAirEnteringDrybulbTemperature,,RS0001 AIR cooling grid variable condenser air entering drybulb temperature,float_array,K,Not required,Conditional,TABULAR only
+aif:spec:performanceMapCoolingGridCondenserAirEnteringRelativeHumidity,,RS0001 AIR cooling grid variable condenser air entering relative humidity,float_array,1,Not required,Conditional,TABULAR only
+aif:spec:performanceMapCoolingGridAmbientPressure,,RS0001 AIR cooling grid variable ambient pressure,float_array,Pa,Not required,Conditional,TABULAR only
+aif:spec:performanceMapCoolingGridCompressorSequenceNumber,,RS0001 AIR cooling grid variable compressor sequence number,int_array,1,Not required,Conditional,TABULAR only
+aif:spec:performanceMapCoolingLookupInputPower,,RS0001 AIR cooling lookup variable input power,float_array,W,Not required,Conditional,TABULAR only
+aif:spec:performanceMapCoolingLookupNetEvaporatorCapacity,,RS0001 AIR cooling lookup variable net evaporator capacity,float_array,W,Not required,Conditional,TABULAR only
+aif:spec:performanceMapCoolingLookupNetCondenserCapacity,,RS0001 AIR cooling lookup variable net condenser capacity,float_array,W,Not required,Conditional,TABULAR only
+aif:spec:performanceMapCoolingLookupCondenserAirVolumetricFlowRate,,RS0001 AIR cooling lookup variable condenser air volumetric flow rate,float_array,m³/s,Not required,Conditional,TABULAR only
+aif:spec:performanceMapCoolingLookupOilCoolerHeat,,RS0001 AIR cooling lookup variable oil cooler heat,float_array,W,Not required,Conditional,TABULAR only
+aif:spec:performanceMapCoolingLookupAuxiliaryHeat,,RS0001 AIR cooling lookup variable auxiliary heat,float_array,W,Not required,Conditional,TABULAR only
+aif:spec:performanceMapCoolingLookupOperationState,,RS0001 AIR cooling lookup operation state,token_array,Not applicable,NORMAL | STANDBY,Conditional,TABULAR only
+aif:spec:performanceMapStandbyGridEnvironmentDryBulbTemperature,,RS0001 standby grid variable environment dry bulb temperature,float_array,K,Not required,Conditional,TABULAR only
+aif:spec:performanceMapStandbyLookupInputPower,,RS0001 standby lookup variable input power,float_array,W,Not required,Conditional,TABULAR only
+aif:spec:performanceMapEvaporatorLiquidPressureDifferentialGridEvaporatorLiquidVolumetricFlowRate,,RS0001 evaporator pressure differential grid variable evaporator liquid volumetric flow rate,float_array,m³/s,Not required,Conditional,TABULAR only
+aif:spec:performanceMapEvaporatorLiquidPressureDifferentialGridEvaporatorLiquidLeavingTemperature,,RS0001 evaporator pressure differential grid variable evaporator liquid leaving temperature,float_array,K,Not required,Conditional,TABULAR only
+aif:spec:performanceMapEvaporatorLiquidPressureDifferentialLookupEvaporatorLiquidDifferentialPressure,,RS0001 evaporator pressure differential lookup variable evaporator liquid differential pressure,float_array,Pa,Not required,Conditional,TABULAR only
+aif:spec:referenceCOP,,Rated COP at design point,float,1,Not required,Optional,All models
+aif:spec:evaporatorLeavingTemperatureSetpoint,,Evaporator leaving temp setpoint,float,K,Not required,Conditional,All models
+aif:spec:evaporatorLeavingTemperatureSetpointMaximum,,Evaporator leaving temp setpoint max,float,K,Not required,Conditional,All models
+aif:spec:evaporatorLeavingTemperatureSetpointMinimum,,Evaporator leaving temp setpoint min,float,K,Not required,Conditional,All models
+aif:spec:maximumOperatingEvaporatorLiquidVolumetricFlowRate,,Evaporator maximum flow rate,float,m³/s,Not required,Conditional,All models
+aif:spec:minimumOperatingEvaporatorLiquidVolumetricFlowRate,,Evaporator minimum flow rate,float,m³/s,Not required,Conditional,All models
+aif:spec:evaporatorNominalPipeOutsideDiameter,,Evaporator nominal pipe OD,float,m,Not required,Conditional,All models
+aif:spec:electricalRatedFullLoadCurrent,,Rated Full Load Current,float,A,Not required,Required,All models
+aif:spec:electricalMaximumOvercurrentProtection,,Maximum Overcurrent Protection,float,A,Not required,Required,All models
+aif:spec:electricalMinimumCurrentAmpacity,,Minimum Circuit Ampacity,float,A,Not required,Required,All models
+aif:spec:operatingWeight,,Operating Weight,float,kg,Not required,Optional,All models
+aif:spec:shippingWeight,,Shipping Weight,float,kg,Not required,Optional,All models
+aif:spec:chillerType,,Chiller type,string,Not applicable,Air-Cooled,Optional (alias),All models
+aif:spec:numberOfCompressors,,Number of compressors,int,1,Not required,Optional,All models
+aif:spec:iplv,,Integrated part-load input-power/cooling-capacity ratio,float,1,Not required,Optional,All models
+aif:spec:nplv,,Non-standard part-load input-power/cooling-capacity ratio,float,1,Not required,Optional,All models
+aif:spec:communicationProtocol,,Communication protocol,token,Not applicable,Not required,Optional,All models
+aif:spec:controller,,Controller model,string,Not applicable,Not required,Optional,All models
+aif:spec:soundPowerLevel,,A-weighted sound power level,float,"dB (A-weighted, re 1 pW)",Not required,Optional,All models
